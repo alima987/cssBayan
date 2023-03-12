@@ -27,11 +27,11 @@ body {
     font-size: 5vh;
     font-weight: 700;
     color:black;
-    margin: 7vh 10vh 5vh;
+    margin: 7vh 10vh 2vh;
 }
 .header_underline {
     border-top: 0.02em solid #32a1ce;
-    margin: 0 10vh;
+    margin: 0 10vh 3vh;
 }
 .wrapper {
     width: 100%;
@@ -113,12 +113,16 @@ input:checked ~ .accor_body {
     transition: all 0.5s;
     padding: 1vh 1vh 1vh;
 }
-/*label:active .accor_item p {
-    color:aquamarine;
-}*/
+
 label:active .accor_item .accor_btn path {
     fill:#32a1ce;
     transition: all 0.7s;
+}
+p {
+    font-family: "PT Serif", serif;
+    font-size: 3.5vh;
+    font-weight: 400;
+    color: black;
 }
 
 @media (hover:hover) and (pointer:fine) {
