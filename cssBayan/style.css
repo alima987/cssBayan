@@ -8,6 +8,9 @@ html {
     overflow-x: hidden;
 }
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: static;
     overflow-x: hidden;
     height: 100%;
@@ -33,10 +36,14 @@ body {
 .wrapper {
     width: 100%;
     margin: 0 auto;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
 }
 
 .accordion_container {
-    margin: 6em 8.5em;
+    width: 80%;
+    margin: 0 auto;
     }
 .accor_underline {
     width: 100%;
@@ -57,6 +64,7 @@ body {
     overflow: hidden;
     font-family: "PT Serif", serif; 
     font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
     
 }
 .accordion_container label {
@@ -97,16 +105,21 @@ body {
 }
 label .accor_body .accordion_meme {
     width: 100%;
-    height: 772px
 }
 input:checked ~ .accor_body {
     cursor: pointer;
-    max-height: 90vh;
+    max-height: 200vh;
     margin-top: 1vh;
     transition: all 0.5s;
-    padding: 2vh 1vh 3vh;
+    padding: 1vh 1vh 1vh;
 }
-
+/*label:active .accor_item p {
+    color:aquamarine;
+}*/
+label:active .accor_item .accor_btn path {
+    fill:#32a1ce;
+    transition: all 0.7s;
+}
 
 @media (hover:hover) and (pointer:fine) {
 .accordion_container:hover p {
@@ -117,7 +130,7 @@ input:checked ~ .accor_body {
 label:hover .accor_body,
     .accor_body:hover {
         cursor: pointer;
-        max-height: 90vh;
+        max-height: 200vh;
         margin-top: 0.5vh;
         padding: 20px 30px 10px;
         transition: all 0.5s;
@@ -131,11 +144,15 @@ label:hover .accor_body,
 
 
 .accor_btn {
-    width: 30px;
-    height: 30px;
-    transition: all 0.5s;
+    width: 2.5vh;
+    height: 2.5vh;
+    transition: all 0.7s;
     opacity: 0;
     transform: rotate(90deg);
+}
+.accor_btn path {
+    fill: #000;
+    transition: all 0.7s;
 }
 .accor_item {
     display: flex;
@@ -145,4 +162,46 @@ label:hover .accor_body,
 }
 input:checked + .accor_item .accor_btn {
     transform: rotate(45deg);
+}
+@media (min-width: 320px) {
+    .header_title {
+        font-size: 2vh;
+    }
+    p {
+        font-size: 1vh;
+    }
+    .accor_btn {
+        width: 1vh;
+        height: 1vh;
+        transition: all 0.7s;
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+}
+@media (min-width: 820px) {
+    .header_title {
+        font-size: 3vh;
+    }
+    p {
+        font-size: 2vh;
+    }
+    .accor_btn {
+        width: 1.8vh;
+        height: 1.8vh;
+        transition: all 0.7s;
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+}
+@media (min-width: 1920px) {
+    .header_title {
+        font-size: 4vh;
+    }
+    p {
+        font-size: 3vh;
+    }
+    .accor_btn {
+        width: 2.5vh;
+        height: 2.5vh;
+    }
 }
