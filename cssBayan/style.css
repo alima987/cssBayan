@@ -52,19 +52,18 @@ body {
 }
 .accordion_container label .accor_body {
     cursor: pointer;
-    width: calc(100% - 40px);
+    width: calc(100% -  2vh);
     margin: 0 auto;
     max-height: 0;
     background-color: transparent;
     text-align: center;
-    line-height: 18px;
-    padding: 0 30px;
+    line-height: 1em;
     box-sizing: border-box;
     transition: color 0.5s, padding 0.5s;
     overflow: hidden;
     font-family: "PT Serif", serif; 
     font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 1em 1em rgb(0 0 0 / 20%), 0 1em 1em rgb(0 0 0 / 20%);
     
 }
 .accordion_container label {
@@ -100,8 +99,7 @@ body {
 }
 .accordion_container input:checked + label + .accor_body {
     height: auto;
-    margin-top: -5px;
-    padding: 20px 30px 10px;
+    margin-top: -3em;
 }
 label .accor_body .accordion_meme {
     width: 100%;
@@ -129,19 +127,19 @@ p {
 .accordion_container:hover p {
     color: black;
     cursor: pointer;
-    transition: color 0.5s;
+    transition: color 0.7s;
 }
 label:hover .accor_body,
     .accor_body:hover {
         cursor: pointer;
         max-height: 200vh;
         margin-top: 0.5vh;
-        padding: 20px 30px 10px;
-        transition: all 0.5s;
+        padding: 1vh 3vh 1vh;
+        transition: all 0.7s;
  }
 .accordion_container:hover .accor_item .accor_btn {
         opacity: 1;
-        transition: all 0.5s;
+        transition: all 0.7s;
  }
 }
 
@@ -208,4 +206,11 @@ input:checked + .accor_item .accor_btn {
         width: 2.5vh;
         height: 2.5vh;
     }
+}
+@media (min-width: 1024px) {
+    .accor_btn {
+        transition: all 0.7s;
+        opacity: 0;
+    }
+    
 }
