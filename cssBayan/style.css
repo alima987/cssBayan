@@ -62,7 +62,7 @@ body {
     transition: color 0.5s, padding 0.5s;
     overflow: hidden;
     font-family: "PT Serif", serif; 
-    font-size: 16px;
+    font-size:3vh;
     box-shadow: 0 1em 1em rgb(0 0 0 / 20%), 0 1em 1em rgb(0 0 0 / 20%);
     
 }
