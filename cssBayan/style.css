@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: static;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: #ff870021;
+}
+.header_container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header_title {
+    font-family: "PT Serif", serif;
+    font-size: 5vh;
+    font-weight: 700;
+    color:black;
+    margin: 7vh 10vh 2vh;
+}
+.header_underline {
+    border-top: 0.02em solid #32a1ce;
+    margin: 0 10vh 3vh;
+}
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+.accordion_container {
+    width: 80%;
+    margin: 0 auto;
+    }
+.accor_underline {
+    width: 100%;
+    border-top: 0.02em solid #32a1ce;
+    
+}
+.accordion_container label .accor_body {
+    cursor: pointer;
+    width: calc(100% -  2vh);
+    margin: 0 auto;
+    max-height: 0;
+    background-color: transparent;
+    text-align: center;
+    line-height: 1em;
+    box-sizing: border-box;
+    transition: color 0.5s, padding 0.5s;
+    overflow: hidden;
+    font-family: "PT Serif", serif; 
+    font-size:3vh;
+    box-shadow: 0 1em 1em rgb(0 0 0 / 20%), 0 1em 1em rgb(0 0 0 / 20%);
+    
+}
+.accordion_container label {
+    cursor: pointer;
+    background-color: transparent;
+    display: block;
+    padding: 1vh 0;
+    width: 100%;
+    color: black;
+    font-weight: 400;
+    box-sizing: border-box;
+    z-index: 100;
+    font-family: "PT Serif", serif;   
+    font-size: 3vh;
+    margin: 0 0 2vh;
+    transition: color .35s;
+
+}
+.accordion_container label:active {
+    color: blue;
+}
+.accordion_container input {
+    display: none;
+}
+
+.accordion_container input:checked + label {
+    background-color: transparent;
+   
+}
+.accordion_container input:checked + label:before {
+    transition: transform .35s;
+    transform: rotate(90deg);
+}
+.accordion_container input:checked + label + .accor_body {
+    height: auto;
+    margin-top: -3em;
+}
+label .accor_body .accordion_meme {
+    width: 100%;
+}
+input:checked ~ .accor_body {
+    cursor: pointer;
+    max-height: 200vh;
+    margin-top: 1vh;
+    transition: all 0.5s;
+    padding: 1vh 1vh 1vh;
+}
+
+label:active .accor_item .accor_btn path {
+    fill:#32a1ce;
+    transition: all 0.7s;
+}
+p {
+    font-family: "PT Serif", serif;
+    font-size: 3.5vh;
+    font-weight: 400;
+    color: black;
+}
+
+@media (hover:hover) and (pointer:fine) {
+.accordion_container:hover p {
+    color: black;
+    cursor: pointer;
+    transition: color 0.7s;
+}
+label:hover .accor_body,
+    .accor_body:hover {
+        cursor: pointer;
+        max-height: 200vh;
+        margin-top: 0.5vh;
+        padding: 1vh 3vh 1vh;
+        transition: all 0.7s;
+ }
+.accordion_container:hover .accor_item .accor_btn {
+        opacity: 1;
+        transition: all 0.7s;
+ }
+}
+
+
+
+.accor_btn {
+    width: 2.5vh;
+    height: 2.5vh;
+    transition: all 0.7s;
+    opacity: 0;
+    transform: rotate(90deg);
+}
+.accor_btn path {
+    fill: #000;
+    transition: all 0.7s;
+}
+.accor_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+input:checked + .accor_item .accor_btn {
+    transform: rotate(45deg);
+}
+@media (min-width: 320px) {
+    .header_title {
+        font-size: 2vh;
+    }
+    p {
+        font-size: 1vh;
+    }
+    .accor_btn {
+        width: 1vh;
+        height: 1vh;
+        transition: all 0.7s;
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+}
+@media (min-width: 820px) {
+    .header_title {
+        font-size: 3vh;
+    }
+    p {
+        font-size: 2vh;
+    }
+    .accor_btn {
+        width: 1.8vh;
+        height: 1.8vh;
+        transition: all 0.7s;
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+}
+@media (min-width: 1920px) {
+    .header_title {
+        font-size: 4vh;
+    }
+    p {
+        font-size: 3vh;
+    }
+    .accor_btn {
+        width: 2.5vh;
+        height: 2.5vh;
+    }
+}
+@media (min-width: 1024px) {
+    .accor_btn {
+        transition: all 0.7s;
+        opacity: 0;
+    }
+    
+}
